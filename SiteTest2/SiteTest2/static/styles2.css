@@ -1,0 +1,238 @@
+/*-----Стандартные тэги-----*/
+body{
+	margin: 0px;
+	padding: 0px;
+	padding: 10px 0 10px 0;
+	font-size: 14px;
+	font-family: PT Sans;
+}
+
+hr{
+	-webkit-box-shadow: 2px 1px rgba(122,122,122,0.5);
+}
+
+a, a:visited{
+	color: black;
+	text-decoration: none; 
+	border-bottom: 1px dashed #000080;
+}
+
+a:hover{
+	color: rgb(60, 60, 150);
+	border-bottom: 1px dashed rgb(60, 60, 150);
+}
+
+h1 {
+	font-size: 17px;
+	margin: 0px 0 0 10px;
+	padding: 0;
+	color: rgb(60, 60, 150);
+}
+	
+h2{	 
+	color: rgb(60, 60, 150);
+	font-size: 16px;
+	margin: 10px 0 5px 0;
+	padding: 0px;
+}
+
+p{
+	text-indent: 20px;
+	padding: 0;
+	margin: 0;	
+}
+
+/*-----Общая разметка страницы-----*/
+.container{
+	margin: auto;
+	width: 950px;
+	border: 1px solid rgba(64,64,64, 0.2);
+	-webkit-box-shadow: 0 0 10px rgba(122,122,122,0.7);
+}
+
+.content{
+	float:left;
+	width: 700px;
+	padding: 10px 5px 5px 5px;
+	border-right: 1px solid rgba(64,64,64, 0.2);
+}
+
+.low_nav{
+	padding: 0px 10px 10px 0; 
+	margin: 0;
+	border-right: 1px solid rgba(64,64,64, 0.2);  
+	float: left; 
+	width: 700px;
+}
+
+.sidebar{
+	float:left;
+	width: 190px;
+	padding: 15px 0 0 25px;
+}
+	
+.clear{
+	clear:both;
+}
+
+.page_counter{
+	float:left;
+	width: 700px;
+	margin-top: -33px;
+	text-align: center;
+}
+
+.footer{
+	clear:both;
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	padding: 8px 0 8px 0;
+	color: rgba(64,64,64,0.6);
+	border-top: 1px solid rgba(64,64,64, 0.2);
+}
+
+.add_article{
+	margin: 0 0 0 40px; 
+	height: 50px; 
+	width: 100px; 
+	border: 1px solid rgba(64,64,64, 0.2);
+	-webkit-box-shadow: 0 0 10px rgba(122,122,122,0.7);
+	text-align: center;
+	padding-top: 12px;	
+	position: fixed; 
+}
+
+#main_add_btn:hover{
+	 border-bottom: 1px dashed #000080;
+	 color: rgb(60, 60, 150);
+}
+/* Pop-up window */
+
+.popup_window{
+	margin: auto;
+	height: 100%; 
+	width: 650px; 
+	padding: 20px; 
+	border: 1px solid rgba(64,64,64, 0.2);
+	-webkit-box-shadow: 0 0 10px rgba(122,122,122,0.7); 
+	background-color: RGB(255, 255, 255); 
+	font-family: PT Sans;
+	
+}
+
+.popup_window  button, 
+.popup_window  input,
+.popup_window  textarea{
+	border: 1px solid rgba(64,64,64, 0.2);
+	-webkit-box-shadow: 0 0 10px rgba(122,122,122,0.7); 
+	background-color: RGB(255, 255, 255); 
+	margin: 5px 0 5px 20px; 
+	font-family: PT Sans;
+	
+} 
+
+.popup_window input{
+	width: 600px;
+	height: 20px;
+	padding: 0 3px 0 3px;
+}
+
+.popup_window textarea{
+	width: 600px;
+	height: 480px;
+	padding: 2px 3px 0 3px;
+}
+.popup_window button{
+	height: 35px; 
+	width: 150px;
+}
+
+.popup_window p{
+	margin: 5px 10px 5px 0;
+}
+
+.errorlist{
+	color: red;
+}
+
+.hidden_error{
+	display: none;
+}
+
+/*-----Sidebar-----*/
+.logo{
+	width: 100%;
+}
+.logo_img{
+	width: 95%;
+
+}
+.logo > a, .logo > a:visited, .logo > a:hover{
+	border-bottom: none;
+}
+
+.info{
+	margin: 50px 0 0 0;
+}
+
+/*-----Разметка топика-----*/
+.annotation{
+	width: 650px;
+	margin: auto;
+	padding: 10px 0 10px 0;
+}
+
+.ann_bottom_border{
+	padding-bottom: 5px;
+	border-bottom:  1px solid rgba(64,64,64, 0.2);
+}
+
+.annotation_header{
+}
+
+h1  > a, h1 > a:visited{
+	text-decoration: none; 
+	border-bottom: none;
+	font-size: 17px;
+	padding: 0;
+	color: rgb(60, 60, 150);
+}
+
+h1 > a:hover{
+	border-bottom: 1px dashed #000080;
+}
+
+.delete_article_btn{
+	float: right; 
+	background: white; 
+	border: none; 
+	text-align: center; 
+	font-size: 17px; 
+	color: rgb(60, 60, 150);
+}
+
+.annotation_date{
+	float:left;
+	width: 40px;
+	height: 40px;
+	margin: -7px 0 0 0;
+	font-weight: bold;
+	text-align: center;
+	line-height: 100%;
+}
+	
+.annotation_body{
+	margin: 15px 0 0 0;
+}
+
+.to_article{
+	width: 500px;
+	padding: 7px;
+	/* text-align: center; */
+	margin-left: 20px;
+
+	font-weight: bold;
+	font-size: 11px;
+}

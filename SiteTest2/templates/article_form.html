@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %} 
+	{% if mode == 0 %}
+	Добавление статьи 
+	{% endif %}
+	{% if mode == 1 %}
+	Редактирование статьи
+	{% endif %}
+{% endblock %}
+
+{% block article_form %}
+
+<form class = "popup_window" id = "popup_window" action = "{% if mode == 0 %}/add_article/{% endif %}
+														   {% if mode == 1 %}/edit_article/{{article_id}}{% endif %}" method = "post">{% csrf_token %}
+	{% if article_form.title.errors %}
+	<p class = "errorlist" id = "popup_window_err_mes"> Заполните поле "Заголовок статьи" для отправки на сайт!</p>	
+	{% endif %}
+	{% if article_form.bb_text.errors %}
+	<p class = "errorlist" id = "popup_window_err_mes"> Заполните поле "Текст статьи" для отправки на сайт!</p>	
+	{% endif %} 
+	<p>Заголовок статьи: </p>
+	{{article_form.title}}
+	<p>Текст статьи: </p>
+	{{article_form.bb_text}}
+	<button type = "submit" >Отправить статью</button>
+	<button type = "button" onclick = "location.href = '{{url_ref}}'" id = "close_popup_window">Закрыть</button>
+	
+</form>
+
+{% endblock %}
+
+{% block comment %}
+<form class = "popup_window" id = "popup_window" action = "{% if adding %}/add_article/{% endif %}
+																			   {% if editing %}/edit_article/{{article.id}}{% endif %}" method = "post">{% csrf_token %}
+	
+	{% if error %}<p class = "errorlist" id = "popup_window_err_mes"> Заполните все поля для отправки на сайт!</p>{% endif %}
+	<p>Заголовок статьи: </p>
+	<input type = "text" maxlength = "200" autocomplete = "off" name = "title" id = "title" value = "{{article.title}}"></input>
+	<p>Текст статьи: </p>
+	<textarea  name = "main_text" id = "main_text">{{article.main_text}}</textarea>
+	<button type = "submit" >
+		{% if adding %}
+		Добавить статью
+		{% endif %}
+		{% if editing %}
+		Редактировать статью
+		{% endif %}
+	</button>
+	<button type = "button" onclick = "location.href = '{{url_ref}}'" id = "close_popup_window">Закрыть</button>
+	
+</form>
+{% endblock %}
+
+{% block add_btn %}{% endblock %}
+{% block container %}{% endblock %}

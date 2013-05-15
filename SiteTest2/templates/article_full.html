@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title%}Бложек: {{ article.title }} {% endblock %}
+
+{% block content %}
+	<div class = "annotation">
+		<div class="annotation_header">
+			<div class = "annotation_date">{{article.pub_date|date:"d b Y"}}</div>
+			<h1 style ="float:left;">{{article.title}}</h1>
+			<form action="/delete_article/" method = "post">{% csrf_token %}
+				<button class = "delete_article_btn" title = "Удалить статью" name = "article_id" value = "{{article.id}}">X</button>
+			</form>
+			<button onclick = "location.href='/edit_article/{{article.id}}'" class = "delete_article_btn" title = "Редактировать статью" name = "article_id">E</button>
+			<div class = "clear"></div>
+		</div>
+					
+		<div class = "annotation_body">
+			<p>{{article.main_text|safe}}</p>
+		</div>
+	</div>
+{% endblock%}
+
+{% block pagecounter%} {%endblock%}
